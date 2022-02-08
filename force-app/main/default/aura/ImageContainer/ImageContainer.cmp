@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="resource" type="Map" required="true" />
+    
+    <aura:registerEvent name="imageClickEvent" type="c:ImageClickEvent" />
+    
+    <div class="slds-box slds-box_x-small">
+        <img src="{!v.resource.src}" onclick="{!c.fireImageClickEvent}" />
+    </div>
+</aura:component>

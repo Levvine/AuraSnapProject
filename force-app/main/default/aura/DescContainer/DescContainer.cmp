@@ -1,0 +1,25 @@
+<aura:component >
+    <aura:attribute name="showDesc" type="Boolean" default="false" />
+    
+    <aura:attribute name="id" type="String" default="null" />
+    <aura:attribute name="name" type="String" default="null" />
+    <aura:attribute name="price" type="String" default="null" />
+    <aura:attribute name="stock" type="String" default="null" />
+    <aura:attribute name="description" type="String" default="null" />
+    
+    <aura:handler event="c:ImageClickEvent" action="{!c.handleImageClickEvent}" />
+    
+    <aura:if isTrue="{!v.showDesc}" >
+        <div class="slds-col slds-size_2-of-5">
+            <lightning:card title="Details for Selected Reward">
+                <p class="slds-p-horizontal_small">
+                    <p>Name: {!v.name}</p>
+                    <p>Price: {!v.price} points</p>
+                    <p>Stock: {!v.stock} units</p>
+                    <p>Description: {!v.description}</p>
+                </p>
+            </lightning:card>
+        </div>
+    </aura:if>
+    
+</aura:component>

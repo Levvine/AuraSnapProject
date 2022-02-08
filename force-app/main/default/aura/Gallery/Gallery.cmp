@@ -1,0 +1,35 @@
+<aura:component controller="GalleryController">
+    <aura:attribute name="resourceNames" type="String[]" default="[
+                                                                  'black_hat',
+                                                                  'black_shirt',
+                                                                  'bound_notebook',
+                                                                  'carabiner',
+                                                                  'drawstring_bag',
+                                                                  'gray_hat',
+                                                                  'gray_shirt',
+                                                                  'koozie',
+                                                                  'mug',
+                                                                  'pen',
+                                                                  'powerbank',
+                                                                  'stickers',
+                                                                  'sticky_notepad',
+                                                                  'stress_ball'
+                                                                  ]" />
+    <aura:attribute name="resources" type="Map[]" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div class="slds-col slds-size_3-of-5 slds-scrollable_y">
+        <lightning:card title="Rewards">
+            <p class="slds-p-horizontal_small">
+                <div class="slds-grid slds-wrap">
+                    <aura:iteration items="{!v.resources}" var="resource">
+                        <div class="slds-col slds-size_1-of-3">
+                            <c:ImageContainer resource="{!resource}" />
+                        </div>
+                    </aura:iteration>
+                </div>
+            </p>
+        </lightning:card>
+    </div>
+</aura:component>
